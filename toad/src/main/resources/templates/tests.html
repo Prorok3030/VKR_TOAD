@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Example list</title>
+</head>
+<body><div>
+    <h1>Список</h1>
+    <a class="btn btn-primary" href="/testAdd" role="button">Добавить</a>
+    <table class="table">
+        <thead class="thead-light">
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Number</th>
+        </tr>
+        </thead>
+        <tbody th:each="el : ${tests}">
+        <tr>
+            <td th:text="${el.id}"/>
+            <td th:text="${el.name}"/>
+            <td th:text="${el.number}"/>
+            <td><a class="btn btn-primary" th:href="@{testEdit/{id}(id=${el.id})}" role="button">Редактировать</a></td>
+            <td><a class="btn btn-danger" th:href="@{testDelete/{id}(id=${el.id})}" role="button">Удалить</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+</head>
+<body>
+<div class="container mt-5 mb-5">
+    <h1>Изменение</h1>
+    <form action="/testEdit" th:object="${test}" method="post">
+        <td>Name</td>
+        <input type="text" th:field="*{name}" placeholder="Input name" id="name"><br>
+        <td>Number</td>
+        <input type="text" th:field="*{number}" placeholder="Input number" id="number"><br>
+        <input th:field="*{id}" id="id" type="hidden">
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form> <br>
+    <a class="btn btn-primary" href="/tests" role="button">Back</a>
+</div>
+</body>
+</html>
